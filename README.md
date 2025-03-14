@@ -1,37 +1,50 @@
-This template is exclusively for frontend projects only and wont work for projects working with react
+A frontend weather web application designed to demonstrate proficiency in using Promises and APIs. This app serves as a proof of concept for handling asynchronous operations and integrating third-party APIs, with a focus on functionality over visual design.
 
-Installation Gui
+Features
 
-```
-npm install --save-dev eslint
-```
+- Real-Time Weather Data: Fetches and displays current weather information for a specified location.
+- Asynchronous Operations: Utilizes JavaScript Promises to handle API requests and responses.
+- API Integration: Connects to a weather API to retrieve and display data.
+- Dynamic Updates: Updates the UI dynamically based on user input and API responses.
 
-```
-npx eslint --init
-```
+Technologies Used
 
-ESLint with Airbnb JavaScript Style:
+- HTML: Structure of the web page.
+- CSS: Basic styling (visually incomplete).
+- JavaScript: Core functionality, including Promises and API integration.
+- Webpack: Module bundler for managing dependencies and assets.
+- Weather API: External API for fetching weather data (e.g., OpenWeatherMap).
 
-```
-npx install-peerdeps --dev eslint-config-airbnb
-```
+App Functionality
 
-```
-npm install --save-dev eslint-config-airbnb eslint@^8.0.0 eslint-plugin-import@^2.25.0 eslint-plugin-jsx-a11y@^6.5.0 eslint-plugin-react@^7.28.0 eslint-plugin-react-hooks@^4.3.0
-```
+- User can serach for the forecast of city/country using a search field
+- Users local forecast based on their coordinates
+- Users local 5 day forecast based on their coordinates
 
-Create an ESLint config file in the root of the project:
+Installing Necessary Packages to Run
 
-```
-npx eslint --init
-```
-
-Install eslint-config-prettier to fix clashing between Airbnb js style and prettier:
-
-```
-npm i -D eslint-config-prettier
-```
+run following command to install necessary webpack packages:
 
 ```
 npx webpack
+```
+
+install package to store api key:
+
+```
+npm install dotenv-webpack
+```
+
+create a .env file at the root of the project. Content of file should look like:
+
+```
+API_KEY=your_api_key_here
+```
+
+Weather API service used is https://openweathermap.org/
+
+Run application:
+
+```
+npm run dev
 ```
