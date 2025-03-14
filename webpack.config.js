@@ -1,13 +1,14 @@
 // webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
-    devServer: {
+  devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, "public"),
     },
     port: 8080,
     // other devServer options if needed
@@ -25,6 +26,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/template.html",
     }),
+    new Dotenv(),
   ],
   module: {
     rules: [
@@ -40,15 +42,13 @@ module.exports = {
         test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             targets: "defaults",
-            presets: [
-              ['@babel/preset-env']
-            ]
-          }
-        }
-      }
+            presets: [["@babel/preset-env"]],
+          },
+        },
+      },
     ],
   },
 };
